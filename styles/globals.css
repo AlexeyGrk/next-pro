@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color:var(--black);
+  background: #f5f6f8;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -13,4 +14,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root{
+  --black:#3B434;
+  --white:white;
+  --primary:#7653FC;
+  --red:#fc836D;
+  --green:#1Dc37e;
+  --green-light:#c8f8e4;
+  --font-family:'Noto Sans KR', sans-serif;
+
 }
