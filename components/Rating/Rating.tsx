@@ -14,6 +14,7 @@ export const Rating = ({rating, isEditable = false, setRating, ...props}: Rating
   }, [rating]);
 
   const constructRating = (currentRating: number) => {
+    {/*dsadadas*/}
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
         <span
@@ -39,7 +40,7 @@ export const Rating = ({rating, isEditable = false, setRating, ...props}: Rating
   };
   const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
     if (e.code !== 'Space' || !setRating) {
-      return
+      return;
     }
     setRating(i);
   };
