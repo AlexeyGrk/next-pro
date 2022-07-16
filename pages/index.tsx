@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import { Htag, Button, Pbig, Tag, Rating } from '../components';
 import { useState } from 'react';
 import { withLayout } from '../layout/Layout'
@@ -27,3 +27,13 @@ const Home: NextPage = () => {
 };
 
 export default withLayout(Home);
+
+
+export const getStaticProps: GetStaticProps = async  () => {
+  return{
+    props:{
+
+    }
+  }
+
+};

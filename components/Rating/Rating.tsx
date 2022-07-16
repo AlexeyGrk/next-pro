@@ -14,7 +14,6 @@ export const Rating = ({rating, isEditable = false, setRating, ...props}: Rating
   }, [rating]);
 
   const constructRating = (currentRating: number) => {
-    {/*dsadadas*/}
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
         <span
