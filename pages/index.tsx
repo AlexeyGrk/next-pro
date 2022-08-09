@@ -1,8 +1,9 @@
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps } from 'next';
+import axios from 'axios';
 import { Htag, Button, Pbig, Tag, Rating } from '../components';
 import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
-import axios from 'axios';
+
 import { MenuItem } from '../interfaces/menu.interface';
 
 
