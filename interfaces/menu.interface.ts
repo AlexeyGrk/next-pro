@@ -7,7 +7,7 @@ export interface PageItem {
 }
 export interface MenuItem {
   _id: {
-    secondaryCategory:string;
+    secondCategory:string;
   };
   category:MenuItem[];
 }
