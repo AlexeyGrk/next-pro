@@ -1,5 +1,4 @@
 import {LayoutProps} from './Layout.props';
-import cn from 'classnames';
 import styles from './Layout.module.css';
 import { Header } from './Header/Header';
 import { Sidebar } from './Sidebar/Sidebar';

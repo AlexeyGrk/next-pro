@@ -6,6 +6,7 @@ export interface PageItem {
   category:string;
 }
 export interface MenuItem {
+  pages: any;
   _id: {
     secondCategory:string;
   };
