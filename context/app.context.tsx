@@ -8,6 +8,7 @@ export interface IAppContext {
   firstCategory:TopLevelCategory,
   setMenu?: (newMenu:MenuItem[])=> void;
 }
+//hello
 
 // export const AppContext = createContext<IAppContext>({ menu:[],firstCategory:TopLevelCategory.Courses});
 
