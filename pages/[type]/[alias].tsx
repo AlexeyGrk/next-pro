@@ -7,7 +7,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { ProductModel } from '../../interfaces/product.interface';
 import { firstLevelMenu } from '../../heplers/helpers';
 
-const Course = ({menu, page, products}: CourseProps): JSX.Element => {
+const Course = ({products}: CourseProps): JSX.Element => {
 
 
   return (
