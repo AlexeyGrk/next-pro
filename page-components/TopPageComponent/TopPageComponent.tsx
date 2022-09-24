@@ -15,7 +15,7 @@ export const TopPageComponent = ({page,products,firstCategory}:TopPageComponentP
         <span>Sort</span>
       </div>
       <div>
-        {products && products.map(p=>(<div key={p._id}>{p.title}</div>))}
+        {products && products.map(p=>(<div key={p?._id}>{p?.title}</div>))}
       </div>
       <div className={styles.workUaTitle}>
         <Htag tag={'h2'}>Вакансии - {page.category}</Htag>
