@@ -11,6 +11,7 @@ export const Tag = ({size='s',children,color='ghost',href,className, ...props}:T
      [styles.ghost] : color==='ghost',
      [styles.red] : color==='red',
      [styles.grey] : color==='grey',
+     [styles.blue] : color=== 'blue',
      [styles.green] : color==='green',
      [styles.primary] : color==='primary',
    })} {...props}>

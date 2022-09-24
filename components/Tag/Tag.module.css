@@ -38,3 +38,8 @@
   border: 1px solid var(--primary);
   font-weight: bold;
 }
+.blue{
+  color: var(--white);
+  background: var(--blue-light);
+  font-weight: bold;
+}

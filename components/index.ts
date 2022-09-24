@@ -3,3 +3,4 @@ export * from './Button/Button';
 export * from './Pbig/Pbig';
 export * from './Tag/Tag';
 export * from './Rating/Rating';
+export * from './Card/Card';
