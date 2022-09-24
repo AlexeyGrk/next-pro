@@ -3,6 +3,7 @@ import styles from './TopPageComponent.module.css';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import { Htag,Tag,Card } from '../../components';
 import { WorkData } from '../../components/WorkData/WorkData';
+import { TopLevelCategory } from '../../interfaces/page.interface';
 
 
 export const TopPageComponent = ({page,products,firstCategory}:TopPageComponentProps):JSX.Element =>{
@@ -20,7 +21,7 @@ export const TopPageComponent = ({page,products,firstCategory}:TopPageComponentP
         <Htag tag={'h2'}>Вакансии - {page.category}</Htag>
        <Tag color='blue' size={'m'}>work.ua</Tag>
       </div>
-      <WorkData {...page.hh}/>
+      {firstCategory===TopLevelCategory.Courses && <WorkData {...page.hh}/>}
 
     </div>
   );

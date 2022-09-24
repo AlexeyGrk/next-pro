@@ -12,12 +12,12 @@ export interface TopPageAdvantage {
 }
 
 export interface workData {
-  _id?: string;
-  count?: number;
-  juniorSalary?: number;
-  middleSalary?: number;
-  seniorSalary?: number;
-  updatedAt?: Date;
+  _id: string;
+  count: number;
+  juniorSalary: number;
+  middleSalary: number;
+  seniorSalary: number;
+  updatedAt: Date;
 }
 
 export interface TopPageModel {
@@ -35,5 +35,5 @@ export interface TopPageModel {
   advantages?: TopPageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
-  hh?: workData;
+  hh: workData;
 }
