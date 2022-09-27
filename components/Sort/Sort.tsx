@@ -2,6 +2,7 @@ import { SortEnum, SortProps } from './Sort.props';
 import cn from 'classnames';
 import styles from './Sort.module.css';
 import SortIcon from './sort.svg';
+import { useState } from 'react';
 
 export const Sort = ({sort,setSort,className,...props}:SortProps):JSX.Element =>{
  return (
