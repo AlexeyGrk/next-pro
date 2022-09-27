@@ -21,14 +21,14 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
         <Htag tag={'h2'}>Вакансии - {page?.category}</Htag>
         <Tag color='blue' size={'m'}>work.ua</Tag>
       </div>
-      {firstCategory === TopLevelCategory.Courses && page.hh && <WorkData {...page.hh}/>}
-      {page.advantages && page.advantages &&
+      {firstCategory === TopLevelCategory.Courses && page.hh && <WorkData {...page?.hh}/>}
+      {page?.advantages && page?.advantages &&
         <>
           <Htag tag={'h2'}>Преимущества</Htag>
-          <Advantages advantages={page.advantages}/>
+          <Advantages advantages={page?.advantages}/>
         </>
       }
-      {page.seoText && <Pbig>{page.seoText}</Pbig> }
+      {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{__html:page?.seoText}}/> }
       <Htag tag={'h2'}>Получаемые навыки</Htag>
       {page.tags.map(t=><Tag key={t} color={'primary'}>{t}</Tag> )}
     </div>
