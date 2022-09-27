@@ -28,9 +28,9 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
           <Advantages advantages={page?.advantages}/>
         </>
       }
-      {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{__html:page?.seoText}}/> }
+      {page?.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{__html:page?.seoText}}/> }
       <Htag tag={'h2'}>Получаемые навыки</Htag>
-      {page.tags.map(t=><Tag key={t} color={'primary'}>{t}</Tag> )}
+      {page?.tags.map(t=><Tag key={t} color={'primary'}>{t}</Tag> )}
     </div>
   );
 }
