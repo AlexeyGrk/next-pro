@@ -5,7 +5,7 @@ import { Card } from '../Card/Card';
 import { Rating } from '../Rating/Rating';
 import { Tag } from '../Tag/Tag';
 import { Button } from '../Button/Button';
-import { priceUa } from '../../heplers/helpers';
+import { declOfNum, priceUa } from '../../heplers/helpers';
 import { Devider } from '../Devider/Devider';
 
 export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
@@ -37,7 +37,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
         кредит
       </div>
       <div className={styles.ratingTitle}>
-        {product.reviewCount} отзывов
+        {product.reviewCount} {declOfNum(product.reviewCount,['отзыв', 'отзыва','отзывов'])}
       </div>
       <Devider className={styles.hr}/>
 
@@ -45,7 +45,11 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
         {product.description}
       </div>
       <div className={styles.feature}>
-        features
+        {product.characteristics.map((ch,idx)=> idx > 0 && <div className={styles.characteristics} key={ch.name}>
+          <span className={styles.characteristicsName}>{ch.name}</span>
+          <span className={styles.characteristicsDots}/>
+          <span className={styles.characteristicsValue}>{ch.value}</span>
+        </div>)}
       </div>
 
       <div className={styles.advBlock}>

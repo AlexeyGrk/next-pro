@@ -34,7 +34,24 @@
 .feature {
   grid-column: start / middle;
 }
+.characteristics{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding-right: 60px;
+  font-size: 16px;
+  line-height: 32px;
+  gap: 10px;
+}
+.characteristicsName {
+  font-weight: 700;
+}
+.characteristicsValue {
 
+}
+.characteristicsDots {
+ border-bottom: 1px dashed var(--gray-light);
+  margin-bottom: 10px;
+}
 .advBlock {
   grid-column: middle / end;
 }
