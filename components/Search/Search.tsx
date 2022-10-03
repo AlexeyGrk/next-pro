@@ -13,7 +13,7 @@ export const Search = ({className, ...props}:SearchProps):JSX.Element =>{
   const goToSearch = () => {
     router.push({pathname:'/search',query:{q:search}});
   };
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key == 'Enter') {
       goToSearch();
     }
