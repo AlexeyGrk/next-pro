@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
 
 import { MenuItem } from '../interfaces/menu.interface';
+import { TextArea } from '../components/TextArea/TextArea';
 
 
 const Home= ({menu}:HomeProps):JSX.Element => {
@@ -25,7 +26,8 @@ const Home= ({menu}:HomeProps):JSX.Element => {
        medium
       </Tag>
       <Rating rating={rating} isEditable={true} setRating={setRating}/>
-      <Input/>
+      {/*<Input placeholder={'Имя'}/>*/}
+      <TextArea/>
 
     </>
   );
