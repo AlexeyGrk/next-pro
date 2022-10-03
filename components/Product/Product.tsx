@@ -7,12 +7,14 @@ import { Tag } from '../Tag/Tag';
 import { Button } from '../Button/Button';
 import { declOfNum, priceUa } from '../../heplers/helpers';
 import { Devider } from '../Devider/Devider';
+import Image from 'next/image';
+
 
 export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title}/>
+        <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70}/>
       </div>
       <div className={styles.title}>
         {product.title}
@@ -69,7 +71,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
 
 
       </div>
-      <Devider className={styles.hr}/>
+      <Devider className={cn(styles.hr, styles.h2) }/>
       <div className={styles.actions}>
         <Button appearance={'primary'}>Узнать подробнее</Button>
         <Button appearance={'ghost'} className={styles.reviewButton} arrow={'right'}>Читать отзывы</Button>
