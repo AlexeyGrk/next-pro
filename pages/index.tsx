@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next';
 import axios from 'axios';
-import { Htag, Button, Pbig, Tag, Rating } from '../components';
+import { Htag, Button, Pbig, Tag, Rating,Input } from '../components';
 import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
 
@@ -25,9 +25,7 @@ const Home= ({menu}:HomeProps):JSX.Element => {
        medium
       </Tag>
       <Rating rating={rating} isEditable={true} setRating={setRating}/>
-      {/*<ul>*/}
-      {/*  {menu.map((m)=>(<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}*/}
-      {/*</ul>*/}
+      <Input/>
 
     </>
   );
