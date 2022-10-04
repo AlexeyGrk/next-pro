@@ -10,6 +10,7 @@ import { Devider } from '../Devider/Devider';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Review } from '../Review/Review';
+import { ReviewForm } from '../ReviewForm/ReviewForm';
 
 
 export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
@@ -86,7 +87,13 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
         [styles.opened] : isReviewOpened,
         [styles.closed] : !isReviewOpened
       })}>
-        {product.reviews && product.reviews.map(rev=>(<Review key={rev._id} review={rev}/>))}
+          {product.reviews && product.reviews.map(rev=>(
+            <>
+            <Review key={rev._id} review={rev}/>
+              <Devider/>
+            </>
+          ))}
+        <ReviewForm productId={product._id}/>
       </Card>
     </>
   );
