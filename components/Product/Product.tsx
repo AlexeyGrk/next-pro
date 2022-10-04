@@ -14,6 +14,7 @@ import { ReviewForm } from '../ReviewForm/ReviewForm';
 
 
 export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
+
   const [isReviewOpened,setIsReviewOpened] = useState<boolean>(false);
   return (
     <>
@@ -35,7 +36,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
         <Rating rating={product?.reviewAvg ?? product.initialRating}/>
       </div>
       <div className={styles.tags}>
-        {product.categories.map(category => <Tag className={styles.category} color={'ghost'} key={category}>{category}</Tag>)}
+        {product.categories.map(category => <Tag  className={styles.category} color={'ghost'} key={category}>{category}</Tag>)}
       </div>
       <div className={styles.priceTitle}>
         цена
@@ -87,12 +88,12 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
         [styles.opened] : isReviewOpened,
         [styles.closed] : !isReviewOpened
       })}>
-          {product.reviews && product.reviews.map(rev=>(
-            <>
-            <Review key={rev._id} review={rev}/>
+          {product.reviews && product.reviews.map(rev=>
+            <div key={rev._id}>
+            <Review  review={rev}/>
               <Devider/>
-            </>
-          ))}
+            </div>
+          )}
         <ReviewForm productId={product._id}/>
       </Card>
     </>
