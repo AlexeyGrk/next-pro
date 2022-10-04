@@ -1,7 +1,7 @@
 .product {
   display: grid;
   grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
-  margin-bottom: 25px;
+  margin-top: 25px;
   padding: 30px;
 }
 
@@ -129,6 +129,18 @@
   border-left: 2px solid var(--red);
   padding-left: 15px;
 }
+.reviews{
+  /*margin-top: -30px;*/
+}
+.closed {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+}
+.opened {
+  max-height: max-content;
+  padding: 30px;
+}
 
 
 @media screen and (max-width: 1320px) {
@@ -250,3 +262,5 @@
     "actions";
   }
 }
+
+
