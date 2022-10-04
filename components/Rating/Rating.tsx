@@ -5,7 +5,7 @@ import cn from 'classnames';
 import styles from './Rating.module.css';
 
 
-export const Rating = forwardRef(({rating, isEditable = false, setRating, ...props}: RatingProps,ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+export const Rating = forwardRef(({rating,error, isEditable = false, setRating, ...props}: RatingProps,ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
 
@@ -19,7 +19,8 @@ export const Rating = forwardRef(({rating, isEditable = false, setRating, ...pro
         <span
           className={cn(styles.star, {
             [styles.filled]: i < currentRating,
-            [styles.editable]: isEditable
+            [styles.editable]: isEditable,
+
           })}
           onClick={() => onClick(i + 1)}
           onMouseEnter={() => changeDisplay(i + 1)}
@@ -57,8 +58,11 @@ export const Rating = forwardRef(({rating, isEditable = false, setRating, ...pro
     setRating(i);
   };
   return (
-    <div ref={ref} {...props}>
+    <div ref={ref} {...props} className={cn(styles.ratingWrapper,{
+      [styles.error]: error
+    })}>
       {ratingArray.map((r, i) => (<span key={i}>{r}</span>))}
+      {error && <span className={styles.errorMessage}>{error.message}</span>}
     </div>
   );
 });

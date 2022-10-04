@@ -141,7 +141,9 @@
   max-height: max-content;
   padding: 30px;
 }
-
+.ratingTitle a {
+  color: var(--primary);
+}
 
 @media screen and (max-width: 1320px) {
   .product {
