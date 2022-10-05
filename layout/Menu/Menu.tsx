@@ -6,12 +6,13 @@ import { FirstLevelMenuItem, PageItem } from '../../interfaces/menu.interface';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { firstLevelMenu } from '../../heplers/helpers';
-import { motion } from 'framer-motion';
+import { motion ,useReducedMotion} from 'framer-motion';
 
 
 export const Menu = (): JSX.Element => {
   const {menu, setMenu, firstCategory} = useContext(AppContext);
   const router = useRouter();
+  const shouldReduceMotion = useReducedMotion();
   const openSecondLevel = (secondCategory: string) => {
     setMenu && setMenu(menu.map(m => {
       if (m._id.secondCategory === secondCategory) {
@@ -36,13 +37,12 @@ export const Menu = (): JSX.Element => {
   const variantsChildren = {
     visible: {
       opacity: 1,
+      // height:29,
       height:30,
       marginBottom:10
     },
     hidden: {
-      opacity: 0,
-      height:0
-    }
+      opacity: shouldReduceMotion ? 1 : 0, height: 0}
   };
 
 
@@ -90,10 +90,10 @@ export const Menu = (): JSX.Element => {
               </motion.div>
 
             </div>
-          )
+          );
         })}
       </div>
-    )
+    );
 
   };
   const buildThirdLevel = (pages: PageItem[], route: string) => {

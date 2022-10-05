@@ -10,6 +10,8 @@ import { sortReducer } from './sort.reducer';
 
 export const TopPageComponent = ({page, products, firstCategory}: TopPageComponentProps): JSX.Element => {
   const [{products:sortedProducts,sort},dispatchSort] = useReducer(sortReducer,{products,sort:SortEnum.Rating});
+
+
   const setSort = (sort:SortEnum) => {
     dispatchSort({type: sort});
   };
@@ -26,7 +28,7 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
        <Sort sort={sort} setSort={setSort}/>
       </div>
       <div>
-        {sortedProducts && sortedProducts.map(p => (<Product key={p?._id} product={p}/>))}
+        {sortedProducts && sortedProducts.map(p => (<Product layout key={p?._id} product={p}/>))}
       </div>
       <div className={styles.workUaTitle}>
         <Htag tag={'h2'}>Вакансии - {page?.category}</Htag>
@@ -44,4 +46,4 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
       {page?.tags.map(t=><Tag key={t} color={'primary'}>{t}</Tag> )}
     </div>
   );
-}
+};

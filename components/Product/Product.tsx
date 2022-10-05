@@ -8,12 +8,13 @@ import { Button } from '../Button/Button';
 import { declOfNum, priceUa } from '../../heplers/helpers';
 import { Devider } from '../Devider/Devider';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
+import { motion} from 'framer-motion';
 
 
-export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef(({product, className, ...props}: ProductProps,ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
   const [isReviewOpened,setIsReviewOpened] = useState<boolean>(false);
   const reviewRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +23,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
     reviewRef.current?.scrollIntoView({behavior:'smooth',block:'start'});
   };
   return (
-    <div className={className} {...props}>
+    <div ref={ref} className={className} {...props}>
     <Card className={styles.product}>
       <div className={styles.logo}>
         <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70}/>
@@ -102,4 +103,4 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
       </Card>
     </div>
   );
-};
+}));
