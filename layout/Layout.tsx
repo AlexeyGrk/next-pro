@@ -17,6 +17,7 @@ const Layout = ({children}:LayoutProps):JSX.Element =>{
     if(key.code==='Space'|| key.code === 'Enter'){
       key.preventDefault();
       bodyRef.current?.focus();
+      setIsSkipLinkDisplayed(false);
 
     }else{
       setIsSkipLinkDisplayed(false);

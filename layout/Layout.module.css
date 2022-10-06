@@ -9,10 +9,7 @@
   ". sidebar body ."
   "footer footer footer footer";
 }
-/*.header{*/
-/*  grid-area: header;*/
-/*  display: none;*/
-/*}*/
+
 .sidebar{
   grid-area: sidebar;
 }
@@ -43,9 +40,6 @@
   .sidebar{
     display: none !important;
   }
-  /*.header{*/
-  /*  display: block;*/
-  /*}*/
   .wrapper {
     grid-template-columns: minmax(320px, 1fr);
     grid-template-areas:

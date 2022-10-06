@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 
 
-export const ReviewForm = ({productId,className, ...props}:ReviewFormProps):JSX.Element =>{
+export const ReviewForm = ({productId,isOpened,className, ...props}:ReviewFormProps):JSX.Element =>{
   const { register, control, handleSubmit, formState: { errors }, reset} = useForm<IReviewForm>();
   const [isSuccess,setIsSuccess] =useState<boolean>(false);
   const [isError,setIsError] =useState<string>();
@@ -38,17 +38,16 @@ export const ReviewForm = ({productId,className, ...props}:ReviewFormProps):JSX.
  return (
    <form onSubmit={handleSubmit(onSubmit)}>
    <div className={cn(styles.reviewForm,className)} {...props} >
-     <Input error={errors.name} {...register('name',{required:{value:true,message:'Заполните имя'}})} placeholder={'Имя'}/>
-     <Input  error={errors.title} {...register('title',{required:{value:true,message:'Заполните заголовок'}})} className={styles.title} placeholder={'Заголовок отзыва'}/>
+     <Input error={errors.name} tabIndex={isOpened?0:-1} {...register('name',{required:{value:true,message:'Заполните имя'}})} placeholder={'Имя'}/>
+     <Input  error={errors.title} tabIndex={isOpened?0:-1}{...register('title',{required:{value:true,message:'Заполните заголовок'}})} className={styles.title} placeholder={'Заголовок отзыва'}/>
      <div className={styles.rating}>
        <span>Оценка:</span>
-       <Controller control={control}  rules={{required:{value:true,message:'Укажите рейтинг'}}} name={'rating'} render={({field})=>(<Rating error={errors.rating} isEditable ref={field.ref} setRating={field.onChange} rating={field.value}/>)}/>
-
+       <Controller control={control}  rules={{required:{value:true,message:'Укажите рейтинг'}}} name={'rating'} render={({field})=>(<Rating error={errors.rating} tabIndex={isOpened?0:-1} isEditable ref={field.ref} setRating={field.onChange} rating={field.value}/>)}/>
 
      </div>
-     <TextArea error={errors.description} {...register('description',{required:{value:true,message:'Обязательное описание'}})} placeholder={'Текст отзыва'} className={styles.description}/>
+     <TextArea tabIndex={isOpened?0:-1} error={errors.description} {...register('description',{required:{value:true,message:'Обязательное описание'}})} placeholder={'Текст отзыва'} className={styles.description}/>
      <div className={styles.submit}>
-       <Button type={'submit'} appearance={'primary'}>Отправить</Button>
+       <Button type={'submit'} tabIndex={isOpened?0:-1} appearance={'primary'}>Отправить</Button>
        <span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
      </div>
    </div>

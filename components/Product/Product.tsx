@@ -30,6 +30,7 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
   const scrollToReview = () => {
     setIsReviewOpened(true);
     reviewRef.current?.scrollIntoView({behavior:'smooth',block:'start'});
+    reviewRef.current?.focus();
   };
   return (
     <div ref={ref} className={className} {...props}>
@@ -100,13 +101,13 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
 
     </Card>
       <motion.div animate={isReviewOpened ? 'visible' : 'hidden'} variants={variants} initial={'hidden'}>
-      <Card color={'blue'} className={cn(styles.reviews)} ref={reviewRef}>
+      <Card color={'blue'} className={cn(styles.reviews)} ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
           {product.reviews && product.reviews.map(rev=>
             <div key={rev._id}>
             <Review  review={rev}/><Devider/>
             </div>
           )}
-        <ReviewForm productId={product._id}/>
+        <ReviewForm isOpened={isReviewOpened} productId={product._id}/>
       </Card>
       </motion.div>
     </div>
