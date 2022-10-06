@@ -25,7 +25,7 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
         <Htag tag={'h1'}>{page?.title}</Htag>
 
         {products && <Tag color='grey' size={'m'}>{products.length}</Tag>}
-       <Sort sort={sort} setSort={setSort}/>
+       <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
         {sortedProducts && sortedProducts.map(p => (<Product layout key={p?._id} product={p}/>))}
