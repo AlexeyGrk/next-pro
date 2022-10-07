@@ -12,6 +12,10 @@
   line-height: 25px;
   margin-top: 20px;
 }
+.firstLevelList{
+  list-style: none;
+  padding: 0;
+}
 
 .firstLevelActive,
 .firstLevel:hover {
@@ -25,13 +29,17 @@
 
 
 .secondBlock {
+  list-style: none;
   margin-top: 15px;
   margin-left: 12px;
-  padding-left: 32px;
+  padding: 0 0 0 32px;
   border-left: 1px solid #DFDFDF;
 }
 
 .secondLevel {
+  background: none;
+  border: none;
+  padding: 0;
   margin-bottom: 10px;
   cursor: pointer;
   text-transform: uppercase;
@@ -43,6 +51,8 @@
 }
 
 .secondLevelBlock{
+  list-style: non;
+  padding: 0;
   overflow: hidden;
 }
 
