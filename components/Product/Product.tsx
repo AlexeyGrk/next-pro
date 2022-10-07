@@ -104,7 +104,7 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
       <Devider className={cn(styles.hr, styles.h2) }/>
       <div className={styles.actions}>
         <Button appearance={'primary'}>Узнать подробнее</Button>
-        <Button appearance={'ghost'} className={styles.reviewButton} onClick={()=>setIsReviewOpened(prevState => !prevState)} arrow={isReviewOpened ? 'down' : 'right'}>Читать отзывы</Button>
+        <Button appearance={'ghost'} className={styles.reviewButton} onClick={()=>setIsReviewOpened(prevState => !prevState)} arrow={isReviewOpened ? 'down' : 'right'} aria-expanded={isReviewOpened} >Читать отзывы</Button>
       </div>
 
     </Card>
