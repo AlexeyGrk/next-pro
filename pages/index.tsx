@@ -1,9 +1,8 @@
 import type { GetStaticProps } from 'next';
 import axios from 'axios';
-import { Htag, Button, Pbig, Tag, Rating,Input } from '../components';
+import { Htag, Button, Pbig, Tag, Rating} from '../components';
 import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
-
 import { MenuItem } from '../interfaces/menu.interface';
 import { TextArea } from '../components/TextArea/TextArea';
 import { API } from '../heplers/api';
@@ -11,7 +10,6 @@ import { API } from '../heplers/api';
 
 const Home= ({menu}:HomeProps):JSX.Element => {
   const [rating,setRating] = useState<number>(4);
-
 
   return (
     <>

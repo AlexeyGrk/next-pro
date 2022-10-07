@@ -9,20 +9,23 @@ import { firstLevelMenu } from '../../heplers/helpers';
 import { TopPageComponent } from '../../page-components';
 import { API } from '../../heplers/api';
 import Head from 'next/head';
+import { Error404 } from '../404';
 
 const TopPage = ({products,firstCategory,page}: TopPageProps): JSX.Element => {
-
+  if(!page && !products){
+    return <Error404/>;
+  }
 
   return (
     <>
-      <Head >
-        <title>{page?.metaTitle}</title>
-        <meta name={'description'} content={page?.metaDescription}/>
-        <meta property={'og:title'} content={page?.metaTitle}/>
-        <meta property={'og:description'} content={page?.metaDescription}/>
-        <meta property={'og:type'} content={'article'}/>
-      </Head>
-      <TopPageComponent firstCategory={firstCategory} page={page} products={products}/>
+          <Head >
+            <title>{page?.metaTitle}</title>
+            <meta name={'description'} content={page?.metaDescription}/>
+            <meta property={'og:title'} content={page?.metaTitle}/>
+            <meta property={'og:description'} content={page?.metaDescription}/>
+            <meta property={'og:type'} content={'article'}/>
+          </Head>
+          <TopPageComponent firstCategory={firstCategory} page={page} products={products}/>
     </>
 
   );

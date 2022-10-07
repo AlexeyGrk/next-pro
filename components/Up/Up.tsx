@@ -1,9 +1,8 @@
 import cn from 'classnames';
 import styles from './Up.module.css';
-import ArrowUpIcon from './arrow-up.svg';
 import { useScrollY } from '../../hooks/useScrollY';
 import { useAnimation,motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import ButtonIcon from '../ButtonIcon/ButtonIcon';
 
 export const Up = (): JSX.Element => {
@@ -30,7 +29,7 @@ export const Up = (): JSX.Element => {
 
     >
 
-      <ButtonIcon appearance={'primary'} icon={'up'} onClick={scrollToTop}/>
+      <ButtonIcon appearance={'primary'} icon={'up'} aria-label={'Наверх'} onClick={scrollToTop}/>
     </motion.div>
   );
 };
