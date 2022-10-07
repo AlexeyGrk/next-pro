@@ -30,3 +30,6 @@
   font-weight: bold;
   color: var(--primary);
 }
+.sortName{
+  display: none;
+}

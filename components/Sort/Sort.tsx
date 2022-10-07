@@ -3,13 +3,12 @@ import {KeyboardEvent} from 'react';
 import cn from 'classnames';
 import styles from './Sort.module.css';
 import SortIcon from './sort.svg';
-import { useState } from 'react';
 
 export const Sort = ({sort,setSort,className,...props}:SortProps):JSX.Element =>{
 
  return (
    <div className={cn(styles.sort,className)}  {...props}>
-     <span onClick={()=>setSort(SortEnum.Rating)} tabIndex={0} onKeyDown={(key:KeyboardEvent)=>{
+     <span onClick={()=>setSort(SortEnum.Rating)} tabIndex={0} aria-label={'Кнопка сортировки по рейтингу'}  onKeyDown={(key:KeyboardEvent)=>{
        if(key.code==='Enter' || key.code==='Space'){
          key.preventDefault();
          setSort(SortEnum.Rating);
@@ -20,7 +19,7 @@ export const Sort = ({sort,setSort,className,...props}:SortProps):JSX.Element =>
        <SortIcon className={styles.sortIcon}/>
        По рейтингу
      </span>
-     <span onClick={()=>setSort(SortEnum.Price)} onKeyDown={(key:KeyboardEvent)=>{
+     <span  aria-label={'Кнопка сортировки по цене'} onClick={()=>setSort(SortEnum.Price)} onKeyDown={(key:KeyboardEvent)=>{
        if(key.code==='Enter' || key.code==='Space'){
          key.preventDefault();
          setSort(SortEnum.Price);
