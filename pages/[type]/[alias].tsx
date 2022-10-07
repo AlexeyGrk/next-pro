@@ -1,4 +1,4 @@
-import type { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext } from 'next';
+import type { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import axios from 'axios';
 import { withLayout } from '../../layout/Layout';
 import { MenuItem } from '../../interfaces/menu.interface';
@@ -16,10 +16,10 @@ const TopPage = ({products,firstCategory,page}: TopPageProps): JSX.Element => {
   return (
     <>
       <Head >
-        <title>{page.metaTitle}</title>
-        <meta name={'description'} content={page.metaDescription}/>
-        <meta property={'og:title'} content={page.metaTitle}/>
-        <meta property={'og:description'} content={page.metaDescription}/>
+        <title>{page?.metaTitle}</title>
+        <meta name={'description'} content={page?.metaDescription}/>
+        <meta property={'og:title'} content={page?.metaTitle}/>
+        <meta property={'og:description'} content={page?.metaDescription}/>
         <meta property={'og:type'} content={'article'}/>
       </Head>
       <TopPageComponent firstCategory={firstCategory} page={page} products={products}/>
