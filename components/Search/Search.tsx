@@ -23,7 +23,7 @@ export const Search = ({className, ...props}:SearchProps):JSX.Element =>{
    <div className={cn(className,styles.search)} {...props}>
      <Input placeholder={'Поиск'} className={styles.input} value={search} onKeyDown={handleKeyDown} onChange={(e)=>setSearch(e.target.value)}/>
      <Button appearance={'primary'} className={styles.button} aria-label={'Искать по сайту'} onClick={goToSearch}><SearchIcon/></Button>
-
+   {/*try fix*/}
    </div>
  );
 };
