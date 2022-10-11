@@ -1,6 +1,5 @@
 import type { GetStaticProps } from 'next';
 import axios from 'axios';
-import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../heplers/api';

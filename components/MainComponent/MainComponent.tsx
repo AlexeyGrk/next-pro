@@ -1,5 +1,3 @@
-import {MainComponentProps} from './MainComponent.props';
-import cn from 'classnames';
 import styles from './MainComponent.module.css';
 import NextStepIcon from '../../heplers/icons/next-steps.svg';
 import { motion } from 'framer-motion';
@@ -52,7 +50,7 @@ export const MainComponent = ():JSX.Element =>{
       {line2.split('').map((char,index)=>{
         return (
           <motion.span className={styles.loadScreenMessageLink}  key={char + '-' + index} variants={letter}>
-            <a href={'hello'}>
+            <a href={'/courses'}>
             {char}
             </a>
           </motion.span>
