@@ -33,3 +33,31 @@
 .loadScreenMessageLink{
   color: var(--primary);
 }
+@media screen and (max-width: 568px) {
+  .mainPicture{
+   max-width: max-content ;
+  }
+
+  .loadScreenMessage {
+    position: relative;
+    left: inherit;
+    top:inherit;
+    font-size: 25px;
+    line-height: 35px;
+
+  }
+  .loadScreenMessageBottom {
+    position: relative;
+    left: inherit;
+    top:inherit;
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .mainPictureWrapper h3{
+  margin: 0;
+
+
+  }
+
+  
+}
