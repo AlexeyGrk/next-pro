@@ -1,19 +1,18 @@
 import type { GetStaticProps } from 'next';
 import axios from 'axios';
-import { Htag} from '../components';
 import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../heplers/api';
+import { MainComponent } from '../components/MainComponent/MainComponent';
 
 
 const Home= ({menu}:HomeProps):JSX.Element => {
 
   return (
-    <>
-      <Htag tag='h1'>Выбери свое будущее!</Htag>
-
-    </>
+    <div>
+      <MainComponent/>
+    </div>
   );
 };
 

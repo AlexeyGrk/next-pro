@@ -1,0 +1,35 @@
+.mainPictureWrapper{
+  position: relative;
+
+
+}
+.mainPicture{
+  display: inline-block;
+  margin: 30px 0;
+  max-width: calc(100% - 50px);
+  max-height: calc(100vh - 120px);
+}
+.loadScreenMessage{
+  position: absolute;
+  left: 50px;
+  top:-30px;
+  color: var(--gray-dark);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+}
+.loadScreenMessageLink{
+  color: var(--primary);
+}
+.loadScreenMessageBottom{
+  position: absolute;
+  right: 0;
+  bottom:-20px;
+  color: var(--gray-dark);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+}
+.loadScreenMessageLink{
+  color: var(--primary);
+}
