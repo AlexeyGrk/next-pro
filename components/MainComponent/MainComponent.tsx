@@ -13,7 +13,8 @@ export const MainComponent = ():JSX.Element =>{
   }, []);
   const line1 = 'Выбери свою историю успеха';
   const line2 = 'прямо сейчас';
-  const line3 = 'Выбери курс и начни обучение';
+  const line3 = 'Выбери курс ';
+  const line4 = 'и начни обучение';
   const sentence = {
     hidden:{
       opacity:1
@@ -60,7 +61,16 @@ export const MainComponent = ():JSX.Element =>{
     {isVisible && <motion.h3 className={styles.loadScreenMessageBottom} variants={sentence} initial={'hidden'} animate={'visible'}>
       {line3.split('').map((char, index) => {
         return (
-          <motion.span key={char + '-' + index} variants={letter}>
+          <a href={'/courses'}>
+            <motion.span className={styles.loadScreenMessageLink}  key={char + '-' + index} variants={letter}>
+              {char}
+            </motion.span>
+          </a>
+        );
+      })}
+      {line4.split('').map((char, index) => {
+        return (
+          <motion.span  key={char + '-' + index} variants={letter}>
             {char}
           </motion.span>
         );
