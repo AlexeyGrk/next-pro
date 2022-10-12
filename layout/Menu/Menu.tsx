@@ -13,7 +13,7 @@ import usePrevious from '../../hooks/usePrevious';
 
 export const Menu = (): JSX.Element => {
   const {menu, setMenu, firstCategory,} = useContext(AppContext);
-  const previous = usePrevious<number>(firstCategory);
+  const previous = usePrevious<number>(firstCategory+1);
 
 
   const [announce,setAnnounce]=useState< 'closed' | 'opened'| undefined >();
@@ -84,7 +84,7 @@ export const Menu = (): JSX.Element => {
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
       <ul className={styles.secondBlock}>
-        {firstCategory === previous && menu.map(m => {
+        {firstCategory !== previous && menu.map(m => {
           if (m.pages.map(p => p.alias).includes(router.asPath.split('/')[2])) {
             m.isOpened = true;
           }
