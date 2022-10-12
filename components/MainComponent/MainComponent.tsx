@@ -61,8 +61,8 @@ export const MainComponent = ():JSX.Element =>{
     {isVisible && <motion.h3 className={styles.loadScreenMessageBottom} variants={sentence} initial={'hidden'} animate={'visible'}>
       {line3.split('').map((char, index) => {
         return (
-          <a href={'/courses'}>
-            <motion.span className={styles.loadScreenMessageLink}  key={char + '-' + index} variants={letter}>
+          <a  key={char + '-' + index} href={'/courses'}>
+            <motion.span className={styles.loadScreenMessageLink}  variants={letter}>
               {char}
             </motion.span>
           </a>
