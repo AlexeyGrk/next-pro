@@ -8,14 +8,10 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { firstLevelMenu } from '../../heplers/helpers';
 import { motion ,useReducedMotion} from 'framer-motion';
-import usePrevious from '../../hooks/usePrevious';
 
 
 export const Menu = (): JSX.Element => {
-  const {menu, setMenu, firstCategory,} = useContext(AppContext);
-  const previous = usePrevious<number>(firstCategory+1);
-
-
+  const {menu, setMenu, firstCategory} = useContext(AppContext);
   const [announce,setAnnounce]=useState< 'closed' | 'opened'| undefined >();
   const router = useRouter();
   const shouldReduceMotion = useReducedMotion();
@@ -63,7 +59,7 @@ export const Menu = (): JSX.Element => {
     return (
       <ul className={styles.firstLevelList}>
         {firstLevelMenu.map((m) => (
-          <li key={m.route} aria-expanded={m.id === firstCategory}>
+          <li key={m.route}  aria-expanded={m.id === firstCategory}>
             <Link href={`/${m.route}`}>
               <a>
                 <div className={cn(styles.firstLevel, {
@@ -75,7 +71,7 @@ export const Menu = (): JSX.Element => {
 
               </a>
             </Link>
-            {m.id === firstCategory && buildSecondLevel(m)}
+            {m.id === firstCategory &&  buildSecondLevel(m)}
           </li>
         ))}
       </ul>
@@ -84,7 +80,7 @@ export const Menu = (): JSX.Element => {
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
       <ul className={styles.secondBlock}>
-        {firstCategory !== previous && menu.map(m => {
+        { menu.map(m => {
           if (m.pages.map(p => p.alias).includes(router.asPath.split('/')[2])) {
             m.isOpened = true;
           }
