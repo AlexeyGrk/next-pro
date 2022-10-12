@@ -58,6 +58,7 @@ export const MainComponent = ():JSX.Element =>{
         );
       })}
     </motion.h3>
+    {!isVisible && <span className={styles.loadScreenMessageBottomMock}>&nbsp;</span>}
     {isVisible && <motion.h3 className={styles.loadScreenMessageBottom} variants={sentence} initial={'hidden'} animate={'visible'}>
       {line3.split('').map((char, index) => {
         return (
