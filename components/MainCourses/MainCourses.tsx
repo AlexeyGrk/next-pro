@@ -1,7 +1,6 @@
 import styles from './MainCourses.module.css';
 import { MainCoursesProps } from './MainCourses.props';
-import { useContext, useEffect } from 'react';
-import { AppContext } from '../../context/app.context';
+
 
 
 export const MainCourses = ({menu}:MainCoursesProps):JSX.Element =>{
@@ -10,7 +9,7 @@ export const MainCourses = ({menu}:MainCoursesProps):JSX.Element =>{
  return (
   <div className={styles.wrapper}>
    <ul>
-    {menu.map(i=>(<div>{i._id.secondCategory}</div>))}
+    {menu && menu.map(i=>(<div>{i._id.secondCategory}</div>))}
    </ul>
 
   </div>
