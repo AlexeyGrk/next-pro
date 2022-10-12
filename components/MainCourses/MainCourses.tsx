@@ -5,10 +5,13 @@ import { AppContext } from '../../context/app.context';
 
 
 export const MainCourses = ({menu}:MainCoursesProps):JSX.Element =>{
- console.log('menu',menu);
+ // console.log('menu',menu);
 
  return (
   <div className={styles.wrapper}>
+   <ul>
+    {menu.map(i=>(<div>{i._id.secondCategory}</div>))}
+   </ul>
 
   </div>
  );
