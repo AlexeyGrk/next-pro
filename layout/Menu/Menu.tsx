@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { KeyboardEvent, useState } from 'react';
+import { KeyboardEvent, useEffect, useState } from 'react';
 import { useContext } from 'react';
 import styles from './Menu.module.css';
 import { AppContext } from '../../context/app.context';
@@ -12,6 +12,7 @@ import { motion ,useReducedMotion} from 'framer-motion';
 
 export const Menu = (): JSX.Element => {
   const {menu, setMenu, firstCategory} = useContext(AppContext);
+  // console.log('menu',menu)
   const [announce,setAnnounce]=useState< 'closed' | 'opened'| undefined >();
   const router = useRouter();
   const shouldReduceMotion = useReducedMotion();
@@ -21,8 +22,10 @@ export const Menu = (): JSX.Element => {
       openSecondLevel(secondCategory);
     }
   };
+
   const openSecondLevel = (secondCategory: string) => {
     setMenu && setMenu(menu.map(m => {
+      console.log('m',m)
       if (m._id.secondCategory === secondCategory) {
         setAnnounce(m.isOpened ? 'closed' : 'opened');
         m.isOpened = !m.isOpened;
@@ -56,6 +59,7 @@ export const Menu = (): JSX.Element => {
 
 
   const buildFirstLevel = () => {
+
     return (
       <ul className={styles.firstLevelList}>
         {firstLevelMenu.map((m) => (
