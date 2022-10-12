@@ -35,21 +35,21 @@
 }
 @media screen and (max-width: 568px) {
   .mainPicture{
-   max-width: max-content ;
+    max-width: none;
   }
 
   .loadScreenMessage {
     position: relative;
-    left: inherit;
-    top:inherit;
+    left: 0;
+    top:0;
     font-size: 25px;
     line-height: 35px;
 
   }
   .loadScreenMessageBottom {
     position: relative;
-    left: inherit;
-    top:inherit;
+    left: 0;
+    top:0;
     font-size: 25px;
     line-height: 35px;
   }
