@@ -14,8 +14,6 @@ import { useRouter } from 'next/router';
 
 const Type = ({firstCategory,menu}:TypeProps):JSX.Element => {
   const [loading,setLoading] = useState(false);
-  const router = useRouter();
-  console.log('router',router);
 
 
   return (

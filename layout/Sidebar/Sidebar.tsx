@@ -12,8 +12,8 @@ import { useRouter } from 'next/router';
 export const Sidebar = ({className,...props}:SidebarProps):JSX.Element =>{
   const router = useRouter();
  return (
-   <div {...props} onClick={()=>router.push('/courses')} className={cn(className,styles.sidebar)}>
-       <Logo   className={styles.logo}/>
+   <div {...props} className={cn(className,styles.sidebar)}>
+       <Logo onClick={()=>router.push('/')}   className={styles.logo}/>
      <Search/>
      <Menu />
    </div>
