@@ -8,15 +8,19 @@ import { firstLevelMenu } from '../../heplers/helpers';
 import { ParsedUrlQuery } from 'querystring';
 import { API } from '../../heplers/api';
 import { MainCourses } from '../../components/MainCourses/MainCourses';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 
 const Type = ({firstCategory,menu}:TypeProps):JSX.Element => {
-
+  const [loading,setLoading] = useState(false);
+  const router = useRouter();
+  console.log('router',router);
 
 
   return (
     <>
-      Hello , this is Type # <span>{firstCategory}</span>
+      Hello , this is Type # <span>{firstCategory}</span>s
       <MainCourses  menu={menu}/>
 
     </>
