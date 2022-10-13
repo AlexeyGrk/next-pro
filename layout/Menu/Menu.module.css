@@ -51,7 +51,7 @@
 }
 
 .secondLevelBlock{
-  list-style: non;
+  list-style: none;
   padding: 0;
   overflow: hidden;
 }

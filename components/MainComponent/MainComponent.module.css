@@ -1,4 +1,6 @@
 .mainPictureWrapper{
+  display: grid;
+  place-items: center;
   position: relative;
 
 

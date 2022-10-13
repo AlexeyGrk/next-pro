@@ -20,9 +20,12 @@ export const AppContextProvider = ({menu,firstCategory,children}: PropsWithChild
   };
 
   useEffect(()=>{
-    setMenu(menu);
+    if(menu.length!==menuState.length){
+      setMenu(menu);
+    }
 
-  },[menu]);
+
+  },[firstCategory, menu]);
 
 
   return (<AppContext.Provider value={{menu:menuState,firstCategory,setMenu}} >
