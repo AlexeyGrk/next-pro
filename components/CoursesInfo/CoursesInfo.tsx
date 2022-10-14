@@ -17,7 +17,7 @@ export const CoursesInfo = ({menu}:CoursesInfoProps):JSX.Element =>{
       </a>
 
       <ul className={styles.cardList}>
-        {menu && menu.slice(0,4).map(i=>(<Card className={styles.card} color={'blue'} key={i._id.secondCategory}>{i._id.secondCategory}</Card>))}
+        {menu && menu.map(i=>(<Card className={styles.card} color={'blue'} key={i._id.secondCategory}>{i._id.secondCategory}</Card>))}
       </ul>
     </div>
   );
