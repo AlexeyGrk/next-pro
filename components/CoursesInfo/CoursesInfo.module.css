@@ -84,6 +84,7 @@ margin-right: 10px;
   border-radius: 8px;
   position: relative;
 }
+
 @media screen and (max-width: 320px) {
   .cardList {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));

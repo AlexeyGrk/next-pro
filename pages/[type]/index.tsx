@@ -9,16 +9,17 @@ import { ParsedUrlQuery } from 'querystring';
 import { API } from '../../heplers/api';
 
 import { MainPopularInfo } from '../../components/MainPopularInfo/MainPopularInfo';
+import { ProductModel } from '../../interfaces/product.interface';
 
 
-const Type = ({firstCategory,menu}:TypeProps):JSX.Element => {
+const Type = ({firstCategory,menu,products}:TypeProps):JSX.Element => {
   const [loading,setLoading] = useState(false);
 
 
   return (
     <>
       Hello , this is Type # <span>{firstCategory}</span>
-      <MainPopularInfo firstCategory={firstCategory} menu={menu}/>
+      <MainPopularInfo firstCategory={firstCategory} products={products} menu={menu}/>
 
     </>
   );
@@ -44,7 +45,6 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
     };
 
   }
-  console.log('params',params)
   const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type);
   if (!firstCategoryItem) {
     return {
@@ -55,11 +55,15 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
   const {data:menu} = await axios.post<MenuItem[]>(API.topPage.find,{
     firstCategory:firstCategoryItem.id
   });
+  const {data: products} = await axios.post<ProductModel[]>(API.topPage.find, {
+    firstCategory: firstCategoryItem.id,
+  });
 
   return{
     props:{
       menu,
-      firstCategory:firstCategoryItem.id
+      firstCategory:firstCategoryItem.id,
+      products
     }
   };
 
@@ -68,4 +72,5 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
 interface TypeProps extends Record<string, unknown>{
   menu:MenuItem[],
   firstCategory:number;
+  products:ProductModel[];
 }

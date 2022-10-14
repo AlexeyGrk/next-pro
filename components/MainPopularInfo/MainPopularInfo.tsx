@@ -4,12 +4,12 @@ import { CoursesInfo } from '../CoursesInfo/CoursesInfo';
 
 
 
-export const MainPopularInfo = ({menu,firstCategory}:MainPopularInfoProps):JSX.Element =>{
+export const MainPopularInfo = ({menu,firstCategory,products}:MainPopularInfoProps):JSX.Element =>{
  // console.log('menu',menu);
 
  return (
   <div className={styles.wrapper}>
-    {firstCategory===0 &&  <CoursesInfo menu={menu}/>}
+    {firstCategory===0 &&  <CoursesInfo products={products} menu={menu}/>}
 
 
   </div>
