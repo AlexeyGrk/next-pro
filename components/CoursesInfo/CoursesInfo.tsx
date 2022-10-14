@@ -39,7 +39,8 @@ export const CoursesInfo = ({menu,products}:CoursesInfoProps):JSX.Element =>{
         {menu && menu.map(i=>(
           <motion.div key={i._id.secondCategory} whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.8 }}
-                      style={{ x: 100 }}>
+                      // style={{ x: 100 }}
+          >
             <Card className={styles.card} color={'blue'} key={i._id.secondCategory}>
               {i._id.secondCategory}
                 {buildSecondLevel(products,i._id.secondCategory)}
