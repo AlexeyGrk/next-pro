@@ -1,15 +1,14 @@
+import {  useState } from 'react';
 import type { GetStaticProps } from 'next';
 import axios from 'axios';
-
 import { withLayout } from '../../layout/Layout';
 import { MenuItem } from '../../interfaces/menu.interface';
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import { firstLevelMenu } from '../../heplers/helpers';
 import { ParsedUrlQuery } from 'querystring';
 import { API } from '../../heplers/api';
-import { MainCourses } from '../../components/MainCourses/MainCourses';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+
+import { MainPopularInfo } from '../../components/MainPopularInfo/MainPopularInfo';
 
 
 const Type = ({firstCategory,menu}:TypeProps):JSX.Element => {
@@ -18,8 +17,8 @@ const Type = ({firstCategory,menu}:TypeProps):JSX.Element => {
 
   return (
     <>
-      Hello , this is Type # <span>{firstCategory}</span>s
-      <MainCourses  menu={menu}/>
+      Hello , this is Type # <span>{firstCategory}</span>
+      <MainPopularInfo firstCategory={firstCategory} menu={menu}/>
 
     </>
   );
@@ -45,6 +44,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
     };
 
   }
+  console.log('params',params)
   const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type);
   if (!firstCategoryItem) {
     return {
@@ -55,6 +55,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}: GetSta
   const {data:menu} = await axios.post<MenuItem[]>(API.topPage.find,{
     firstCategory:firstCategoryItem.id
   });
+
   return{
     props:{
       menu,

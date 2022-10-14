@@ -1,0 +1,91 @@
+.wrapper{
+
+  padding-top: 10px;
+}
+.decor{
+  position: relative;
+  display: grid;
+  grid-template-columns: 70px auto auto auto;
+  justify-content: space-between;
+  /*border-radius: 15px;*/
+  gap: 10px;
+  place-items: center;
+  width: 100%;
+  text-align: center;
+  background-color:#FFD300;
+  min-height: 70px;
+  font-size: 28px;
+
+}
+
+.link{
+  align-self: center;
+  font-weight: bold;
+  color: var(--primary);
+}
+.decor:hover .link{
+  text-decoration: underline 2px solid var(--primary);
+}
+.decor:hover .text{
+  color: var(--gray-dark);
+}
+
+.dots{
+margin-right: 10px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .decor{
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+  .triangle{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    rotate: 270deg;
+  }
+  .text{
+    font-size: 18px;
+  }
+
+
+}
+@media screen and (max-width: 780px) {
+  .dots{
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .decor{
+    font-size: 16px;
+  }
+  .dots{
+    margin-right: 5px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .decor{
+    font-size: 22px;
+  }
+}
+.cardList{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0;
+  margin-top: 20px;
+}
+.card{
+  padding-top: 56.25%;
+  border-radius: 8px;
+  position: relative;
+}
+@media screen and (max-width: 320px) {
+  .cardList {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}

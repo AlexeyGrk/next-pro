@@ -28,7 +28,7 @@ a {
   --gray-dark:#6c7077;
   --gray:#A4A4A4;
   --white:white;
-  --primary:#7351f5;
+  --primary: rgba(115, 81, 245);
   --primary-hover: #513ab0;
   --red:#fc836D;
   --red-light:#FEA291;
