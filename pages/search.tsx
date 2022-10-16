@@ -3,15 +3,20 @@ import axios from 'axios';
 import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../heplers/api';
-import { ProductModel } from '../interfaces/product.interface';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import ErrorIcon from '../heplers/icons/err.svg';
 
 
 const Search = ():JSX.Element => {
+  const router = useRouter();
+  const [err,setErr]=useState(false);
 
 
   return (
     <>
-      Hello , this is Search
+      <ErrorIcon/>
+      Вот что мы нашли по вашему запросу : {`${router.query ? router?.query.q : 'Поиск...'}`}
 
     </>
   );
@@ -29,8 +34,9 @@ export const getStaticProps: GetStaticProps<HomeProps> = async  () => {
   return{
     props:{
       menu,
-      firstCategory
-    }
+      firstCategory,
+      notFound: true,
+    },
   };
 
 };

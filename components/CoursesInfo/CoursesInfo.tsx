@@ -4,10 +4,8 @@ import Triangle from '../../heplers/icons/triangle.svg';
 import Dots from '../../heplers/icons/dots.svg';
 import { Card } from '../Card/Card';
 import { motion } from 'framer-motion';
-import { firstLevelMenu } from '../../heplers/helpers';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
-import { Htag } from '../Htag/Htag';
 
 
 export const CoursesInfo = ({menu,products}:CoursesInfoProps):JSX.Element =>{
