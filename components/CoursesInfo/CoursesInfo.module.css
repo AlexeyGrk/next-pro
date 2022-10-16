@@ -79,13 +79,52 @@ margin-right: 10px;
   padding: 0;
   margin-top: 20px;
 }
-.card{
-  height: 100%;
-  padding-top: 56.25%;
-  border-radius: 8px;
-  position: relative;
+.even{
+  background-color: var(--primary);
 }
+.odd{
+  background-color: rgba(255, 199, 44, 0.8);
+}
+.card{
+  display: grid;
+  padding: 15px;
+  height: 100%;
+  min-height: 200px;
+  /*padding-top: 56.25%;*/
+  /*border-radius: 8px;*/
+  /*position: relative;*/
+}
+.card:hover .title{
+  color: var(--white);
+  border-bottom: 2px solid var(--primary-hover);
+}
+.title{
+  align-items: flex-start;
+  /*margin-bottom: 15px;*/
+  max-height: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--white);
+}
+.secondBlock{
+  display: grid;
+  align-items: flex-start;
+  align-content: space-between;
+  padding: 0;
+  list-style: none;
 
+}
+.secondBlockItem{
+  /*color: var(--gray-dark);*/
+  font-size: 14px;
+
+}
+.secondBlockItemLink{
+  display: inline-block;
+  margin: 5px 10px;
+}
+.secondBlockItemLink:hover{
+ color: var(--white);
+}
 @media screen and (max-width: 320px) {
   .cardList {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));

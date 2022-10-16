@@ -25,7 +25,7 @@ a {
 :root{
   --black:#3B434;
   --gray-light:#EBEBEB;
-  --gray-dark:#6c7077;
+  --gray-dark: #6c7077;
   --gray:#A4A4A4;
   --white:white;
   --primary: rgba(115, 81, 245);
