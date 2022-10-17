@@ -26,3 +26,11 @@ import ProductsIcon from './icons/box.svg';
    const cases = [2,0,1,1,1,2];
    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
  }
+export const arraySearch = (array, keyword) => {
+  const searchTerm = keyword.toLowerCase();
+  return array.filter(value => {
+    return value.title.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+      value.category.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+      value.alias.toLowerCase().match(new RegExp(searchTerm, 'g'));
+  });
+};
