@@ -3,26 +3,18 @@ import axios from 'axios';
 import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../heplers/api';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import ErrorIcon from '../heplers/icons/err.svg';
+
 import { ProductModel } from '../interfaces/product.interface';
-import { arraySearch } from '../heplers/helpers';
+import { MainSearchComponent } from '../components/MainSearchComponent/MainSearchComponent';
 
 
 
 
 const Search = ({products}:HomeProps):JSX.Element => {
-  const router = useRouter();
-  const [resultSearch,setResultSearch]=useState(null);
 
   return (
     <>
-      {/*<ErrorIcon/>*/}
-      Вот что мы нашли по вашему запросу : {`${router.query ? router?.query.q : 'Поиск...'}`}
-      {router?.query?.q && products && arraySearch(products.map(i=>i.pages).flat(1),router?.query?.q).map((i)=><div key={i._id}>{i.title}</div>)}
-
-      {/*{router.query && products.map(i=>i).includes(router?.query.q)}*/}
+      {<MainSearchComponent products={products}/>}
     </>
   );
 };
