@@ -28,3 +28,21 @@
   color:var(--primary-hover);
 
 }
+.notFoundContainer{
+  display: grid;
+  place-items: center;
+}
+.notFoundIcon{
+  max-width: 600px;
+
+}
+@media screen and (max-width: 640px) {
+  .list {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .heading {
+   font-size: 20px;
+  }
+
+}
