@@ -47,8 +47,8 @@ export const Menu = (): JSX.Element => {
     visible: {
       opacity: 1,
       height:'auto',
-      minHeight:30,
-      marginBottom:10
+      // minHeight:30,
+      marginBottom:12
     },
     hidden: {
       opacity: shouldReduceMotion ? 1 : 0, height: 0,minHeight: 0,marginBottom:0}
