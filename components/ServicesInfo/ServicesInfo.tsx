@@ -1,5 +1,5 @@
-import { CoursesInfoProps } from './CoursesInfo.props';
-import styles from './CoursesInfo.module.css';
+import { ServicesInfoProps } from './ServicesInfo.props';
+import styles from './ServicesInfo.module.css';
 import Triangle from '../../heplers/icons/triangle.svg';
 import Dots from '../../heplers/icons/dots.svg';
 import { Card } from '../Card/Card';
@@ -8,14 +8,14 @@ import { useRouter } from 'next/router';
 import cn from 'classnames';
 
 
-export const CoursesInfo = ({menu,products}:CoursesInfoProps):JSX.Element =>{
+export const ServicesInfo = ({menu,products}:ServicesInfoProps):JSX.Element =>{
   const router = useRouter();
   const buildSecondLevel = (products: any,secondCategory:string) => {
     return (
       <ul className={styles.secondBlock}>
         {products.map((product:any)=>{
           if(product._id.secondCategory===secondCategory){
-            return (<li className={styles.secondBlockItem} key={product._id.secondCategory}>{product.pages.slice(0,3).map((page)=><a  className={styles.secondBlockItemLink}  href={`${router?.query ? router?.query?.type : ''}/${page.alias}`}>{page.title}</a>)}</li>);
+            return (<li className={styles.secondBlockItem} key={secondCategory}>{product.pages.slice(0,3).map((page)=><a  className={styles.secondBlockItemLink}  href={`${router?.query ? router?.query?.type : ''}/${page.alias}`}>{page.title}</a>)}</li>);
           }
         })}
       </ul>
