@@ -66,6 +66,7 @@
   font-size: 14px;
   /*line-height: 19px;*/
   outline-offset:-1px ;
+  white-space: nowrap;
 }
 
 .thirdLevelActive,
