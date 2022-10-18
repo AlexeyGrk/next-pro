@@ -18,7 +18,7 @@ const Type = ({firstCategory,menu,products}:TypeProps):JSX.Element => {
 
   return (
     <>
-      Hello , this is Type # <span>{firstCategory}</span>
+      {/*Hello , this is Type # <span>{firstCategory}</span>*/}
       <MainPopularInfo firstCategory={firstCategory} products={products} menu={menu}/>
 
     </>

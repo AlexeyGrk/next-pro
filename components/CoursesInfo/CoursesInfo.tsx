@@ -15,7 +15,9 @@ export const CoursesInfo = ({menu,products,firstCategory}:CoursesInfoProps):JSX.
       <ul className={styles.secondBlock}>
         {products.map((product:any)=>{
           if(product._id.secondCategory===secondCategory){
-            return (<li className={styles.secondBlockItem} key={product._id.secondCategory}>{product.pages.slice(0,3).map((page)=><a  className={styles.secondBlockItemLink}  href={`${router?.query ? router?.query?.type : ''}/${page.alias}`}>{page.title}</a>)}</li>);
+            return (<li className={styles.secondBlockItem} key={product._id.secondCategory}>{product.pages.slice(0,3).map((page)=>
+              <a  key={page.alias} className={styles.secondBlockItemLink}  href={`${router?.query ? router?.query?.type : ''}/${page.alias}`}>{page.title}</a>
+            )}</li>);
           }
         })}
       </ul>
