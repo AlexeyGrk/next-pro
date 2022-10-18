@@ -9,7 +9,7 @@ export const MainPopularInfo = ({menu,firstCategory,products}:MainPopularInfoPro
  return (
   <div className={styles.wrapper}>
     {firstCategory===0 &&  <CoursesInfo products={products} menu={menu}/>}
-   {firstCategory===1 && <CoursesInfo products={products} menu={menu}/>}
+   {firstCategory===1 && <CoursesInfo products={products} firstCategory={firstCategory} menu={menu}/>}
 
 
   </div>

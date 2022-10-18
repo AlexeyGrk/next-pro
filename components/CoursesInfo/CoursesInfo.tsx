@@ -6,9 +6,9 @@ import { Card } from '../Card/Card';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
+import {firstLevelMenu} from '../../heplers/helpers';
 
-
-export const CoursesInfo = ({menu,products}:CoursesInfoProps):JSX.Element =>{
+export const CoursesInfo = ({menu,products,firstCategory}:CoursesInfoProps):JSX.Element =>{
   const router = useRouter();
   const buildSecondLevel = (products: any,secondCategory:string) => {
     return (
@@ -32,7 +32,7 @@ export const CoursesInfo = ({menu,products}:CoursesInfoProps):JSX.Element =>{
           <Dots className={styles.dots}/>
         </div>
       </a>
-      <h2 >Популярные курсы по направлениям</h2>
+      <h2 >Популярные {firstCategory ? firstLevelMenu[firstCategory].name : 'Курсы'} по направлениям</h2>
 
       <ul className={styles.cardList}>
         {menu && menu.map((i,idx)=>(
