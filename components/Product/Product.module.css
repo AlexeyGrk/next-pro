@@ -8,6 +8,7 @@
 .logo {
   grid-column: start / logoend;
   grid-row: 1 / span 2;
+/*  das*/
 }
 .icon{
   width: 70px;
