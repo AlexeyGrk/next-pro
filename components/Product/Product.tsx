@@ -22,10 +22,12 @@ export const Product = motion(forwardRef(({product, className,idx, ...props}: Pr
 
   const variants = {
     visible:{
-      opacity:1,height:'auto'
+      opacity:1,
+      height:'auto',
     },
     hidden:{
-      opacity:0,height:0
+      opacity:0,
+      height:0
     }
   };
 
@@ -38,8 +40,8 @@ export const Product = motion(forwardRef(({product, className,idx, ...props}: Pr
     <div ref={ref} className={className} {...props}>
     <Card className={styles.product}>
       <div className={styles.logo}>
-        {idx % 2 === 0 ? <LearnIcon className={styles.icon}/> : <ShcoolIcon className={styles.icon}/>}
-        {/*<Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70}/>*/}
+        {/*{idx % 2 === 0 ? <LearnIcon className={styles.icon}/> : <ShcoolIcon className={styles.icon}/>}*/}
+        <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70}/>
       </div>
       <div className={styles.title}>
         {product.title}
@@ -118,7 +120,7 @@ export const Product = motion(forwardRef(({product, className,idx, ...props}: Pr
             <Review  review={rev}/><Devider/>
             </div>
           )}
-        <ReviewForm isOpened={isReviewOpened} productId={product._id}/>
+        {isReviewOpened && <ReviewForm isOpened={isReviewOpened} productId={product._id}/>}
       </Card>
       </motion.div>
     </div>
