@@ -51,7 +51,7 @@ export const Menu = (): JSX.Element => {
       marginBottom:13
     },
     hidden: {
-      opacity: shouldReduceMotion ? 1 : 0, height: 0,     marginBottom:0}
+      opacity: shouldReduceMotion ? 1 : 0, height: 0,minHeight: 0,marginBottom:0}
   };
 
 
