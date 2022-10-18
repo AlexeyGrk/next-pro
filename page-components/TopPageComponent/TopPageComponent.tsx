@@ -30,7 +30,7 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
        <Sort sort={sort} setSort={setSort} />
       </div>
       <div role={'list'}>
-        {sortedProducts && sortedProducts.map(p => (<Product  role={'listitem'} layout key={p?._id} product={p}/>))}
+        {sortedProducts && sortedProducts.map((p,idx) => (<Product idx={idx} role={'listitem'} layout key={p?._id} product={p}/>))}
       </div>
       <div className={styles.workUaTitle}>
         <Htag tag={'h2'}>Вакансии - {page?.category}</Htag>

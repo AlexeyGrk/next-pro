@@ -9,7 +9,10 @@
   grid-column: start / logoend;
   grid-row: 1 / span 2;
 }
-
+.icon{
+  width: 70px;
+  height: 70px;
+}
 .title, .tags {
   grid-column: titlestart / middle;
 

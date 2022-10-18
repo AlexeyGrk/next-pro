@@ -12,9 +12,11 @@ import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
 import { motion} from 'framer-motion';
+import LearnIcon from '../../heplers/icons/learning.svg';
+import ShcoolIcon from '../../heplers/icons/schol.svg';
 
 
-export const Product = motion(forwardRef(({product, className, ...props}: ProductProps,ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
+export const Product = motion(forwardRef(({product, className,idx, ...props}: ProductProps,ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
   const [isReviewOpened,setIsReviewOpened] = useState<boolean>(false);
   const reviewRef = useRef<HTMLDivElement>(null);
 
@@ -36,7 +38,8 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
     <div ref={ref} className={className} {...props}>
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70}/>
+        {idx % 2 === 0 ? <LearnIcon className={styles.icon}/> : <ShcoolIcon className={styles.icon}/>}
+        {/*<Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70}/>*/}
       </div>
       <div className={styles.title}>
         {product.title}
