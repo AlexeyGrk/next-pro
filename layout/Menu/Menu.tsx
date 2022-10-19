@@ -47,7 +47,6 @@ export const Menu = (): JSX.Element => {
     visible: {
       opacity: 1,
       height:'auto',
-      // minHeight:30,
       marginBottom:12
     },
     hidden: {

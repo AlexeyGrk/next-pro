@@ -10,7 +10,6 @@ import { TopPageComponent } from '../../page-components';
 import { API } from '../../heplers/api';
 import Head from 'next/head';
 import { Error404 } from '../404';
-import { useEffect } from 'react';
 
 const TopPage = ({products,firstCategory,page}: TopPageProps): JSX.Element => {
 

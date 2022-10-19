@@ -13,14 +13,11 @@ import { ProductModel } from '../../interfaces/product.interface';
 
 
 const Type = ({firstCategory,menu,products}:TypeProps):JSX.Element => {
-  const [loading,setLoading] = useState(false);
 
 
   return (
     <>
-      {/*Hello , this is Type # <span>{firstCategory}</span>*/}
       <MainPopularInfo firstCategory={firstCategory} products={products} menu={menu}/>
-
     </>
   );
 };
