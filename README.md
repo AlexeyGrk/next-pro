@@ -5,7 +5,7 @@ A Courses Shop SSG Project with NextJS
 
 ## Built With:
 
-- React JS
+- Next JS
 - CSS
 - Framer Motion
 - Context
