@@ -1,13 +1,33 @@
 
-## Top Courses Project (NextJs)
+# ReactJS Project: Courses Shop App!
 
-First, run the development server:
+A Courses Shop SSG Project with NextJS
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Built With:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- React JS
+- CSS
+- Framer Motion
+- Context
+- React Hook Form
+
+
+## Concept:
+
+Adaptive and Minimalize App
+
+
+
+## Author
+
+- Alexey Gmirko
+  - [GitHub](https://github.com/AlexeyGrk/)
+
+## Getting started
+
+To get started with the app, visit the Live version.
+
+## Live Version
+
+- [Live version in Netlify](https://next-courses-nine.vercel.app)
 
