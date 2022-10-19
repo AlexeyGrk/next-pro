@@ -29,5 +29,5 @@ To get started with the app, visit the Live version.
 
 ## Live Version
 
-- [Live version in Netlify](https://next-courses-nine.vercel.app)
+- [Live version in Vercel](https://next-courses-nine.vercel.app)
 
