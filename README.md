@@ -1,7 +1,7 @@
 
-# ReactJS Project: Courses Shop App!
+# ReactJS Project: Courses Store App!
 
-A Courses Shop SSG Project with NextJS
+A Courses Store SSG Project with NextJS
 
 ## Built With:
 
